@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Brands;
+use Illuminate\Support\Facades\DB;
 
 class BrandsSeeder extends Seeder
 {
@@ -13,7 +14,9 @@ class BrandsSeeder extends Seeder
     public function run()
     {
         if (Brands::first() !== null) {
+            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
             Brands::truncate();
+            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         }
 
         $bransName = [
