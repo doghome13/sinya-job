@@ -35,13 +35,14 @@
             }
 
             .content {
-                text-align: center;
-                padding: 20px 10px;
+                /* text-align: center; */
             }
 
             .title {
                 font-size: 84px;
             }
+
+            @yield('style')
         </style>
 
         <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
